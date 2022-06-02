@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@300&family=Redressed&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>Spats</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Anek Tamil', sans-serif;
+            transition: all;
+            transition-duration: 0.6s;
+            transition-delay: 0.5s;
+
+        }
+
+
+        #rocket:hover {
+            position: relative;
+            transition: all;
+            transition-duration: 0.6s;
+            transition-delay: 0.5s;
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Example Code -->
+
+    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="spatsLogo.png" alt="Logo" height="45px" width="45">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#intro">Intro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contact us</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+
+                    <button class="btn btn-outline-success me-3 fs-5" type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#signup"> Sign Up </button>
+                    <button class="btn btn-success fs-5" data-bs-toggle="modal" data-bs-target="#login"> Login </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade fs-3 modal-lg" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="Firstname" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="Firstname" placeholder="First name"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastname" class="form-label">Last name</label>
+                                <input type="password" class="form-control" id="lastname" placeholder="Last name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4"
+                                    placeholder="example@gmail.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="confirmpassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmpassword"
+                                    placeholder="Confirm password" required>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck"
+                                        onclick="passwordVisibility()">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Show Password
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="inputCity" class="form-label">City</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="Your City" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="state" class="form-label">State</label>
+                                <input type="text" class="form-control" id="state" placeholder="Your state" required>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputZip" class="form-label">Pin code</label>
+                                <input type="text" class="form-control" id="inputZip" placeholder="Pin code" required>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login modal  -->
+
+    <div class="modal fade fs-3  modal-lg " id="login" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-2" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row mb-3">
+                            <label for="inputEmail5" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="inputEmail5"
+                                    placeholder="example@gmail.com">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword5" class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPassword5" placeholder="password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-sm-10 offset-sm-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1"
+                                        onclick="passwordVisibility()">
+                                    <label class="form-check-label" for="gridCheck1">
+                                        Show Password
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-success me-auto" data-bs-dismiss="modal" data-bs-toggle="modal"
+                        data-bs-target="#signup">Create Account</button>
+                    <button type="button" class="btn btn-danger">Forgot Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- END of Navbar -->
+
+    <!-- Start of intro container -->
+    <div id="intro"></div>
+    <div class="Introclass container-fluid">
+        <div class="bg-dark text-secondary px-4  text-center row py-5">
+            <div class="col-md-6"><img class=" " src="spatsLogo.png" alt="" width="40%"></div>
+            <div class="py-5 col-md-6">
+                <h1 class="display-5 fw-bold text-white">National Students' Space Challenge</h1>
+                <div class="col-lg-8 mx-auto text-white">
+                    <p class="fs-5 ">Going by the name of Space Technology Students' Society (spAts), this is the
+                        official student body under the Kalpana Chawla Space Technology Cell (KCSTC), which is the
+                        contact point of Indian Space Research Organisation (ISRO) at IIT Kharagpur. This student group
+                        has conceived and bred the first and the only fest in India that is solely dedicated to Space
+                        Technology - National Students' Space Challenge (NSSC).</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-secondary px-4  text-center row py-5 transition">
+            <div class="py-5 col-md-6">
+                <h1 class="display-5 fw-bold text-white">Space Technology Students Society(spAts)</h1>
+                <div class="col-lg-8 mx-auto text-white">
+                    <p class="fs-5 ">Going by the name of Space Technology Students' Society (spAts), this is the
+                        official student body under the Kalpana Chawla Space Technology Cell (KCSTC), which is the
+                        contact point of Indian Space Research Organisation (ISRO) at IIT Kharagpur. This student group
+                        has conceived and bred the first and the only fest in India that is solely dedicated to Space
+                        Technology - National Students' Space Challenge (NSSC).</p>
+                </div>
+            </div>
+            <div class="col-md-6 "><img src="rocket.png" id="rocket" alt="" width="40%"></div>
+        </div>
+    </div>
+    <!-- End of Intro  -->
+
+    <!-- Gallery  -->
+    <div id="gallery"></div>
+    <div class="container-fluid bg-dark">
+
+        <section class="p-4 text-center w-100">
+            <!-- Gallery -->
+            <div class="heading  text-center text-info ">
+                <h1 class="display-5 fw-bold">Gallery</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="schedule.jpg" class="w-100 shadow-1-strong rounded mb-4 " alt="Boat on Calm Water">
+
+                    <img src="5dec.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape">
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="man.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds">
+                </div>
+
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="4dec.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea">
+
+                    <img src="12dec.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park">
+                </div>
+            </div>
+            <!-- Gallery -->
+        </section>
+    </div>
+
+    <!-- End of Gallery -->
+
+    <!-- Start of team -->
+    <div id="team"></div>
+    <div class="container-fluid bg-dark">
+        <div class="heading  text-center text-info ">
+            <h1 class="display-5 fw-bold">Team Members</h1>
+        </div>
+        <div class="text-white  fs-3 text-center d-flex flex-wrap justify-content-evenly">
+            <div class="">
+                <div class="card" style="width: 18rem; margin: 3px auto; margin-top: 25px;">
+                    <img class="card-img-top" data-src="holder.js/100px180/?text=Image cap" alt="Image cap [100%x180]"
+                        src="person2.jpg" data-holder-rendered="true" style=" width: 100%; display: block;">
+                </div>
+                <p class=" fw-bold mb-0">person sigma</p>
+                <p class="mb-0">head 1</p>
+                <div class="d-flex justify-content-evenly">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <div class="">
+                <div class="card" style="width: 18rem; margin: 3px auto; margin-top: 25px;">
+                    <img class="card-img-top" data-src="holder.js/100px180/?text=Image cap" alt="Image cap [100%x180]"
+                        src="person2.jpg" data-holder-rendered="true" style=" width: 100%; display: block;">
+                </div>
+                <p class=" fw-bold mb-0">person sigma</p>
+                <p class="mb-0">Head 2</p>
+                <div class="d-flex justify-content-evenly">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <div class="">
+                <div class="card" style="width: 18rem; margin: 3px auto; margin-top: 25px;">
+                    <img class="card-img-top" data-src="holder.js/100px180/?text=Image cap" alt="Image cap [100%x180]"
+                        src="person2.jpg" data-holder-rendered="true" style=" width: 100%; display: block;">
+                </div>
+                <p class=" fw-bold mb-0">person sigma</p>
+                <p class="mb-0">Head 2</p>
+                <div class="d-flex justify-content-evenly">
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- End of Team -->
+
+    <!-- start of footer  -->
+    <div class=" " id="footer">
+
+        <footer class=" text-white " style="background-color: #573478">
+
+            <div class="container-fluid fs-4 p-4 pb-0">
+
+                <section class="">
+
+                    <div class="row">
+
+                        <div class="col-lg-10 col-md-10 mb-10 mb-md-0">
+                            <h4 class="text-uppercase fs-2">National Students' Space Challenge</h4>
+
+                            <p class="fs-5">
+                                It organises the annual Space Technology and Astronomy themed fest, National Students'
+                                Space Challenge[1] (NSSC) every year 2011. spAts has been constantly instrumental in
+                                organizing space-themed talks, discussions, sky gazing sessions, lectures and
+                                presentations within IIT Kharagpur.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 mt-3 px-5">
+
+                            <ul class="list-unstyled mb-0 text-center text-md-start">
+                                <li class="my-3 ">
+                                    <a href="#!" class="text-white text-decoration-none ">Twitter</a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="#!" class="text-white text-decoration-none">Facebook</a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="#!" class="text-white text-decoration-none">Instagram</a>
+                                </li>
+                                <li class="my-3 ">
+                                    <a href="#!" class="text-white text-decoration-none">Certificates</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 mt-3 px-5">
+
+                            <ul class="list-unstyled mb-0 text-center text-md-start">
+                                <li class="my-3 ">
+                                    <a href="#!" class="text-white text-decoration-none ">Linked In</a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="#!" class="text-white text-decoration-none">Whatsapp</a>
+                                </li>
+                                <li class="my-3">
+                                    <a href="#!" class="text-white text-decoration-none">E mail</a>
+                                </li>
+                                <li class="my-3 ">
+                                    <a href="#!" class="text-white text-decoration-none">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <hr class="mb-2" />
+
+
+                <section class="mb-2 text-center fs-3">
+                    <a class="btn  btn-floating m-1 mx-3" href="#!" role="button">
+                        <h3><i class="bi bi-facebook"></i></h3>
+
+                        <a class="btn  btn-floating m-1 mx-3" href="#!" role="button">
+                            <h3><i class="bi bi-linkedin"></i> </h3>
+                        </a>
+
+                        <a class="btn  btn-floating m-1 mx-3" href="#!" role="button">
+                            <h3><i class="bi bi-envelope"></i> </h3>
+                        </a>
+
+                        <a class="btn  btn-floating m-1 mx-3" href="#!" role="button">
+                            <h3><i class="bi bi-twitter"></i> </h3>
+                        </a>
+
+                        <a class="btn  btn-floating m-1 mx-3" href="#!" role="button">
+                            <h3><i class="bi bi-whatsapp"></i> </h3>
+                        </a>
+
+                </section>
+
+            </div>
+
+            <div class="text-center p-2 fs-5"
+                style="background-color: rgba(0, 0, 0, 0.168); color:rgba(255, 255, 255, 0.64);  ">
+                <a href="#" style="text-decoration: none; color:blue">©</a> 2022 spAts, inc. All rights reserved
+            </div>
+
+        </footer>
+
+        <!-- End of footer -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+            integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+            crossorigin="anonymous"></script>
+        <script>
+            function passwordVisibility() {
+                var x = document.getElementById("inputPassword4");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+                var y = document.getElementById("confirmpassword");
+                if (y.type === "password") {
+                    y.type = "text";
+                } else {
+                    y.type = "password";
+                }
+                var z = document.getElementById("inputPassword5");
+                if (z.type === "password") {
+                    z.type = "text";
+                } else {
+                    z.type = "password";
+                }
+            }
+        </script>
+</body>
+
+</html>
